@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xero Warszawa | Szybkie Kopiowanie i Druk</title>
     
-    <!-- WŁAŚCIWE LOGO FAVICON W FORMACIE SVG (jako Data URI) -->
-    <!-- Zawiera symbol kopiarki w kolorach niebieskim i żółtym -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'><rect x='0' y='0' width='100' height='100' rx='15' fill='%230b5fa5'/><path d='M25 40H75V75H25V40Z' fill='white'/><path d='M25 40H75V35C75 32.7909 73.2091 31 71 31H29C26.7909 31 25 32.7909 25 35V40Z' fill='white'/><rect x='35' y='70' width='30' height='15' fill='%23f5d300' rx='2'/><rect x='30' y='45' width='40' height='15' fill='%231e3a8a'/><path d='M75 55L85 55' stroke='white' stroke-width='3' stroke-linecap='round'/><path d='M85 55L75 60' stroke='white' stroke-width='3' stroke-linecap='round'/><path d='M85 55L75 50' stroke='white' stroke-width='3' stroke-linecap='round'/></svg>">
+    <!-- DODANIE FAVICON (LOGO NA KARCIE PRZEGLĄDARKI) -->
+    <!-- Zastąp "favicon.ico" ścieżką do swojego pliku (np. logo.png) -->
+    <link rel="icon" type="image/png" href="files/logoxerowawa.png">
     
     <!-- Ładowanie Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -161,3 +161,231 @@
                                 <li>Archiwizacja cyfrowa.</li>
                             </ul>
                         </div>
+                        
+                        <!-- Usługa 3: Oprawa -->
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h3 class="text-2xl font-semibold mb-3 text-gray-800 flex items-center">
+                                <span class="bg-blue-100 text-blue-600 p-2 rounded-full mr-3">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v4m8-4v4m-3 8h-2m-3 0h6m-9-3h10a2 2 0 002-2V8a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path></svg>
+                                </span>
+                                Oprawa i Wykończenie
+                            </h3>
+                            <ul class="list-disc pl-8 text-gray-600 space-y-2">
+                                <li><b>Bindowanie:</b> spiralne, drutowe (do prac dyplomowych).</li>
+                                <li><b>Laminowanie:</b> zabezpieczenie dokumentów przed wilgocią.</li>
+                                <li><b>Oprawa Twarda/Miękka:</b> profesjonalne wykończenie.</li>
+                                <li><b>Cięcie:</b> precyzyjne cięcie ulotek i wizytówek.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Usługa 4: Projektowanie graficzne -->
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h3 class="text-2xl font-semibold mb-3 text-gray-800 flex items-center">
+                                <span class="bg-blue-100 text-blue-600 p-2 rounded-full mr-3">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V8m10 4a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V8"></path></svg>
+                                </span>
+                                Usługi Dodatkowe
+                            </h3>
+                            <ul class="list-disc pl-8 text-gray-600 space-y-2">
+                                <li>Projektowanie ulotek i wizytówek.</li>
+                                <li>Przygotowanie do druku (edycja PDF).</li>
+                                <li>Wydruki z plików i z chmury.</li>
+                                <li>Personalizacja wydruków.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            `,
+            pricing: `
+                <section class="bg-white p-8 rounded-xl card-shadow">
+                    <h2 class="text-4xl font-bold text-blue-800 mb-8 text-center">Cennik Podstawowych Usług</h2>
+                    <p class="text-center text-gray-600 mb-8">Ceny netto. Przy dużych nakładach oferujemy atrakcyjne rabaty! Zapytaj o indywidualną wycenę.</p>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-blue-50">
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Usługa</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Format</th>
+                                    <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Cena (1-50 szt.)</th>
+                                    <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Cena (pow. 100 szt.)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <!-- Ksero Czarno-Białe -->
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">Ksero/Druk C/B</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">A4</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">0.20 PLN</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-right text-green-600 font-semibold">0.15 PLN</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">Ksero/Druk C/B</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">A3</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">0.40 PLN</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-right text-green-600 font-semibold">0.30 PLN</td>
+                                </tr>
+                                <!-- Ksero Kolorowe -->
+                                <tr class="bg-yellow-50">
+                                    <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">Ksero/Druk Kolor</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">A4</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">0.99 PLN</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-right text-green-600 font-semibold">0.80 PLN</td>
+                                </tr>
+                                <tr class="bg-yellow-50">
+                                    <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">Ksero/Druk Kolor</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">A3</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">1.80 PLN</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-right text-green-600 font-semibold">1.50 PLN</td>
+                                </tr>
+                                <!-- Skanowanie -->
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">Skanowanie</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">A4/A3</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">0.50 PLN/str.</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-right text-green-600 font-semibold">0.30 PLN/str.</td>
+                                </tr>
+                                <!-- Bindowanie -->
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">Bindowanie (do 100 str.)</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">A4</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">5.00 PLN</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-right text-green-600 font-semibold">4.00 PLN</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="mt-8 p-4 bg-blue-100 rounded-lg border-l-4 border-blue-500 text-blue-800">
+                        <p class="font-semibold">Potrzebujesz wydrukować pracę dyplomową lub duży projekt?</p>
+                        <p>Skontaktuj się z nami, a przygotujemy indywidualną, korzystną wycenę!</p>
+                    </div>
+                </section>
+            `,
+            contact: `
+                <section class="bg-white p-8 rounded-xl card-shadow">
+                    <h2 class="text-4xl font-bold text-blue-800 mb-8 text-center">Skontaktuj się z Nami</h2>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- Adres i Godziny -->
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <span class="text-2xl text-blue-600 mr-4 mt-1">
+                                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.243-4.243m10.606 0A8.956 8.956 0 0112 20.25c-2.478 0-4.764-.897-6.557-2.393M17.657 16.657c-1.496-1.496-3.84-2.393-6.157-2.393s-4.661.897-6.157 2.393M12 13a3 3 0 100-6 3 3 0 000 6z"></path></svg>
+                                </span>
+                                <div>
+                                    <h3 class="text-xl font-semibold text-gray-800">Adres</h3>
+                                    <p class="text-gray-600">Ul. Przykładowa 15 (Centrum), 00-123 Warszawa</p>
+                                    <p class="text-sm text-blue-500">Zapraszamy do naszego punktu!</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-2xl text-blue-600 mr-4 mt-1">
+                                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                </span>
+                                <div>
+                                    <h3 class="text-xl font-semibold text-gray-800">Godziny Otwarcia</h3>
+                                    <p class="text-gray-600"><b>Poniedziałek - Piątek:</b> 9:00 - 18:00</p>
+                                    <p class="text-gray-600"><b>Sobota:</b> 10:00 - 14:00 (tylko duże zlecenia)</p>
+                                    <p class="text-gray-600"><b>Niedziela:</b> Nieczynne</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-2xl text-blue-600 mr-4 mt-1">
+                                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-2-3H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V7a2 2 0 00-2-2z"></path></svg>
+                                </span>
+                                <div>
+                                    <h3 class="text-xl font-semibold text-gray-800">Telefon / E-mail</h3>
+                                    <p class="text-gray-600"><b>Tel:</b> 123 456 789</p>
+                                    <p class="text-gray-600"><b>Email:</b> kontakt@xerowarszawa.pl</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Formularz Kontaktowy (placeholder) -->
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-4">Wyślij nam wiadomość</h3>
+                            <form class="space-y-4">
+                                <div>
+                                    <input type="text" placeholder="Twoje Imię" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+                                </div>
+                                <div>
+                                    <input type="email" placeholder="Adres E-mail" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+                                </div>
+                                <div>
+                                    <textarea placeholder="Treść wiadomości (np. prośba o wycenę druku 500 ulotek)" rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required></textarea>
+                                </div>
+                                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                                    Wyślij Zapytanie
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            `
+        };
+
+        // Funkcja renderująca zawartość na podstawie klucza strony
+        function renderPage(pageKey) {
+            contentArea.innerHTML = pages[pageKey] || pages['home'];
+            
+            // Aktualizacja aktywnego linku w nawigacji
+            navLinks.forEach(link => {
+                link.classList.remove('active-nav-link');
+                if (link.dataset.page === pageKey) {
+                    link.classList.add('active-nav-link');
+                }
+            });
+
+            // Ukryj menu mobilne po kliknięciu
+            if (!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        }
+
+        // Ustawienie listenerów dla nawigacji
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                renderPage(link.dataset.page);
+            });
+        });
+
+        // Obsługa menu mobilnego
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Renderuj domyślną stronę przy starcie
+        window.onload = () => {
+             // Upewnij się, że pierwszy link jest aktywny na starcie
+             navLinks[0].classList.add('active-nav-link');
+             renderPage('home');
+        };
+
+        // Proste wbudowane powiadomienie zamiast alert()
+        document.querySelector('body').addEventListener('submit', function(e) {
+            if (e.target.tagName === 'FORM') {
+                e.preventDefault();
+                const form = e.target;
+                const submitButton = form.querySelector('button[type="submit"]');
+
+                if (submitButton) {
+                    submitButton.textContent = "Wysłano!";
+                    submitButton.disabled = true;
+                    submitButton.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+                    submitButton.classList.add('bg-green-600', 'hover:bg-green-700');
+
+                    setTimeout(() => {
+                        submitButton.textContent = "Wyślij Zapytanie";
+                        submitButton.disabled = false;
+                        submitButton.classList.remove('bg-green-600', 'hover:bg-green-700');
+                        submitButton.classList.add('bg-blue-600', 'hover:bg-blue-700');
+                        form.reset();
+                    }, 3000);
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
+
