@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xero Warszawa | Szybkie Kopiowanie i Druk</title>
+    
+    <!-- WŁAŚCIWE LOGO FAVICON W FORMACIE SVG (jako Data URI) -->
+    <!-- Zawiera symbol kopiarki w kolorach niebieskim i żółtym -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'><rect x='0' y='0' width='100' height='100' rx='15' fill='%230b5fa5'/><path d='M25 40H75V75H25V40Z' fill='white'/><path d='M25 40H75V35C75 32.7909 73.2091 31 71 31H29C26.7909 31 25 32.7909 25 35V40Z' fill='white'/><rect x='35' y='70' width='30' height='15' fill='%23f5d300' rx='2'/><rect x='30' y='45' width='40' height='15' fill='%231e3a8a'/><path d='M75 55L85 55' stroke='white' stroke-width='3' stroke-linecap='round'/><path d='M85 55L75 60' stroke='white' stroke-width='3' stroke-linecap='round'/><path d='M85 55L75 50' stroke='white' stroke-width='3' stroke-linecap='round'/></svg>">
+    
+    <!-- Ładowanie Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Ustawienia czcionki Inter */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1a202c;
+        }
+        .nav-link {
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 0.5rem;
+        }
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .active-nav-link {
+            background-color: #0b5fa5 !important;
+            font-weight: 600;
+        }
+        .card-shadow {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Nagłówek i Nawigacja -->
+    <header class="bg-blue-800 text-white shadow-lg sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <h1 class="text-3xl font-bold tracking-wider">XERO <span class="text-yellow-400">WARSZAWA</span></h1>
+                    <p class="text-sm -mt-1 opacity-80">Profesjonalne Usługi Drukarskie</p>
+                </div>
+                <nav class="hidden md:flex space-x-4">
+                    <a class="nav-link px-4 py-2" data-page="home">Strona Główna</a>
+                    <a class="nav-link px-4 py-2" data-page="services">Usługi</a>
+                    <a class="nav-link px-4 py-2" data-page="pricing">Cennik</a>
+                    <a class="nav-link px-4 py-2" data-page="contact">Kontakt</a>
+                </nav>
+                <!-- Przycisk menu dla urządzeń mobilnych -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-white hover:text-blue-800 transition">
+                    <!-- Ikona menu (SVG) -->
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Menu mobilne (ukryte domyślnie) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-blue-700 py-2">
+            <a class="nav-link block px-4 py-2 text-base" data-page="home">Strona Główna</a>
+            <a class="nav-link block px-4 py-2 text-base" data-page="services">Usługi</a>
+            <a class="nav-link block px-4 py-2 text-base" data-page="pricing">Cennik</a>
+            <a class="nav-link block px-4 py-2 text-base" data-page="contact">Kontakt</a>
+        </div>
+    </header>
+
+    <!-- Główna zawartość dynamiczna -->
+    <main id="content-area" class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full"></main>
+
+    <!-- Stopka -->
+    <footer class="bg-gray-900 text-white mt-10">
+        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Xero Warszawa. Wszystkie prawa zastrzeżone. | Ul. Przykładowa 15, 00-123 Warszawa</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- LOGIKA APLIKACJI JEDNOSTRONICOWEJ (SIMULACJA PODSTRON) ---
+
+        const contentArea = document.getElementById('content-area');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        // Mapa zawartości dla każdej "podstrony"
+        const pages = {
+            home: `
+                <section class="text-center py-20 bg-white rounded-xl card-shadow mb-10">
+                    <h2 class="text-5xl font-extrabold text-blue-800 mb-4">Szybkie i Profesjonalne Ksero w Sercu Warszawy</h2>
+                    <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                        Potrzebujesz wydrukować, skopiować lub zeskanować dokumenty? Jesteśmy do Twojej dyspozycji! Najwyższa jakość, błyskawiczna obsługa i konkurencyjne ceny.
+                    </p>
+                    <a onclick="renderPage('services')" class="inline-block bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 shadow-md cursor-pointer">
+                        Zobacz Nasze Usługi
+                    </a>
+                </section>
+
+                <section class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-white p-6 rounded-xl card-shadow">
+                        <div class="text-4xl text-blue-600 mb-4">
+                            <!-- Ikona zegara -->
+                            <svg class="w-10 h-10 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Błyskawiczna Realizacja</h3>
+                        <p class="text-gray-500">Krótkie terminy i ekspresowe usługi na miejscu. Idealne dla studentów i firm.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl card-shadow">
+                        <div class="text-4xl text-blue-600 mb-4">
+                            <!-- Ikona drukarki -->
+                            <svg class="w-10 h-10 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2h-6a2 2 0 00-2 2v4a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Wysoka Jakość Druku</h3>
+                        <p class="text-gray-500">Kopia czarno-biała, kolorowa, duże formaty A3/A0 – zawsze perfekcyjnie.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl card-shadow">
+                        <div class="text-4xl text-blue-600 mb-4">
+                            <!-- Ikona lokalizacji -->
+                            <svg class="w-10 h-10 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.243-4.243m10.606 0a9 9 0 11-12.728-12.728 9 9 0 0112.728 12.728zM12 13a3 3 0 100-6 3 3 0 000 6z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Dogodna Lokalizacja</h3>
+                        <p class="text-gray-500">Łatwy dostęp i parking w centrum Warszawy (np. blisko metra).</p>
+                    </div>
+                </section>
+            `,
+            services: `
+                <section class="bg-white p-8 rounded-xl card-shadow">
+                    <h2 class="text-4xl font-bold text-blue-800 mb-8 text-center">Nasze Główne Usługi</h2>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- Usługa 1: Ksero i Druk -->
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h3 class="text-2xl font-semibold mb-3 text-gray-800 flex items-center">
+                                <span class="bg-blue-100 text-blue-600 p-2 rounded-full mr-3">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                                </span>
+                                Kopiowanie i Druk Cyfrowy
+                            </h3>
+                            <ul class="list-disc pl-8 text-gray-600 space-y-2">
+                                <li><b>Formaty:</b> A4, A3, SRA3, oraz duże formaty (ploter).</li>
+                                <li><b>Kolor:</b> Druk i ksero kolorowe oraz czarno-białe.</li>
+                                <li><b>Materiały:</b> Papier standardowy, fotograficzny, naklejki, folie.</li>
+                                <li><b>Ekspres:</b> Możliwość druku na poczekaniu.</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Usługa 2: Skanowanie -->
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h3 class="text-2xl font-semibold mb-3 text-gray-800 flex items-center">
+                                <span class="bg-blue-100 text-blue-600 p-2 rounded-full mr-3">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13l-3 3m0 0l-3-3m3 3V8m0 0a2 2 0 00-2-2h-4a2 2 0 00-2 2v8a2 2 0 002 2h4a2 2 0 002-2V8z"></path></svg>
+                                </span>
+                                Skanowanie Dokumentów
+                            </h3>
+                            <ul class="list-disc pl-8 text-gray-600 space-y-2">
+                                <li>Skanowanie do formatów PDF, JPG, TIFF.</li>
+                                <li>Skanowanie wielkoformatowe (rysunki techniczne, plakaty).</li>
+                                <li>Możliwość przesłania plików na email, pendrive lub chmurę.</li>
+                                <li>Archiwizacja cyfrowa.</li>
+                            </ul>
+                        </div>
